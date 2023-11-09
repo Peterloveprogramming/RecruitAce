@@ -33,14 +33,12 @@ class APITest extends TestCase
 
         $this->assertDatabaseHas('jobs', [
             'title' => 'Software Engineer',
-            // Make sure to include any other fields that the Job model uses which are required
         ]);
     }
 
     /** @test */
     public function fetch_specific_job(): void
     {
-        // You should create a job entry before trying to fetch it
         $job = Job::create([
             'title' => 'Existing Job',
             'description' => 'Existing Description',
@@ -56,7 +54,6 @@ class APITest extends TestCase
     /** @test */
     public function update_job()
     {
-        // Create a job entry to update
         $job = Job::create([
             'title' => 'Old Title',
             'description' => 'Old Description',
@@ -79,7 +76,6 @@ class APITest extends TestCase
 
         $this->assertDatabaseHas('jobs', [
             'title' => 'Junior Software Engineer',
-            // Make sure to include any other fields that the Job model uses which are required
         ]);
     }
 
